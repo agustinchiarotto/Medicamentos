@@ -1,0 +1,49 @@
+
+    <div class ="col-md-12">
+    <a routerLink="/users/add" class "btn btn-btn-xs float-rigth btn-warning">Añadir Usuario </a>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>EDAD</th>
+          <th>NOMBRE</th>
+          <th>GENERO</th>
+          <th>EMAIL</th>
+          <th>TELEFONO</th>
+          <th>DIRECCION</th>
+          <th>REGISTRO</th>
+          <th>COORDENADA X</th>
+          <th>COORDENADA Y</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="users">
+        <tr *ngFor="let user of users">
+          <td>{{ user.id }}</td>
+          <td>{{ user.edad }}</td>
+          <td>{{ user.nombre }}</td>
+          <td>{{ user.genero }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.telefono }}</td>
+          <td>{{ user.registro }}</td>
+          <td>{{ user.latitud }}</td>
+          <td>{{ user.longitud }}</td>
+
+          <td>
+            <a [routerLink]="['/users', user.id, 'detail']" class="btn btn-xs btn-info">
+              Detalle
+            </a>
+
+            <a [routerLink]="['/users', user.id, 'edit']" class="btn btn-xs btn-primary">
+              Editar
+            </a>
+
+            <button (click)= "remove(user)" class="btn btn-xs btn-danger">
+              Eliminar
+            </button>
+
+          </td>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
