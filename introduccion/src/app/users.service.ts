@@ -24,8 +24,7 @@ export class UsersService {
 
 addUser(user:User):Observable<User>{
   const newUser= Object.assign({}, user);
-  return this.http.post<User>(this.usersUrl, newUser, cudOptions)
-  .catch(this.handleError);
+  return this.http.post<User>(this.usersUrl, newUser, cudOptions).catch(this.handleError);
 }
 
 updeteUser(user:User):Observable<null>{

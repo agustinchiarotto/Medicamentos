@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { InMemoryBdService } from 'angular-in-memory-web-api';
+import { InMemoryDbService } from 'angular-in-memory-web-api';
 @Injectable()
-export class InMemoryApiService implements InMemoryBdService{
+export class InMemoryApiService implements InMemoryDbService{
 
   constructor() { }
 
